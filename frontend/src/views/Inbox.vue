@@ -48,40 +48,13 @@
             <SearchBar />
           </div>
           <div class="col-7">
-            <ul class="profile-list">
-              <li>
-                <a href="">
-                  <div class="row profile">
-                    <div class="col-1 avatar">
-                      <img :src="avatar" alt="avatar" />
-                    </div>
-                    <div class="col-9 title-message">
-                      <div class="title"><p>David James</p></div>
-                      <div class="message">
-                        <p>Lorem ipsum dolor sit amet Consectetur…</p>
-                      </div>
-                    </div>
-                    <div class="date">Jan 5</div>
-                  </div></a
-                >
-              </li>
-              <li>
-                <a href="">
-                  <div class="row profile">
-                    <div class="col-1 avatar">
-                      <img :src="avatar1" alt="avatar1" />
-                    </div>
-                    <div class="col-9 title-message">
-                      <div class="title"><p>Tony Stark</p></div>
-                      <div class="message">
-                        <p>Lorem ipsum dolor sit amet Consectetur…</p>
-                      </div>
-                    </div>
-                    <div class="date">Jan 4</div>
-                  </div></a
-                >
-              </li>
-            </ul>
+            <PersonPanel
+              v-for="item in items"
+              v-bind:key="item.key"
+              v-bind:avatar="item.avatar"
+              v-bind:name="item.name"
+              v-bind:date="item.date"
+            />
           </div>
         </div>
       </div>
@@ -141,6 +114,7 @@
 import SideBar from "../components/SideBar";
 import { QBtn } from "quasar";
 import SearchBar from "../components/SearchBar";
+import PersonPanel from "../components/PersonPanel";
 
 export default {
   name: "Dashboard",
@@ -149,13 +123,22 @@ export default {
     blue: require("../assets/inbox/Ellipse 37.png"),
     orange: require("../assets/inbox/Ellipse 38.png"),
     avatar: require("../assets/inbox/avatar.png"),
-    avatar1: require("../assets/inbox/avatar1.png"),
-    textarea: ""
+    textarea: "",
+    items: [
+      { id: 1, avatar: "avatar", name: "David James", date: "Jan 5" },
+      { id: 2, avatar: "avatar-1", name: "Tony Stark", date: "Jan 4" },
+      { id: 3, avatar: "avatar-2", name: "Bessie Berry", date: "Jan 2" },
+      { id: 4, avatar: "avatar-3", name: "Gleb Kuznetsov", date: "Dec 30" },
+      { id: 5, avatar: "avatar-4", name: "Andrey Prokopenko", date: "Dec 28" },
+      { id: 6, avatar: "avatar-5", name: "Nick Herasimenka", date: "Dec 17" },
+      { id: 7, avatar: "avatar-6", name: "Valentin Salmon", date: "Dec 12s" }
+    ]
   }),
   components: {
     SideBar,
     QBtn,
-    SearchBar
+    SearchBar,
+    PersonPanel
   }
 };
 </script>
@@ -164,7 +147,6 @@ export default {
 div#inbox {
   position: relative;
   width: calc(100% - 325px);
-  
 }
 
 div.inbox-side {
@@ -175,7 +157,7 @@ div.inbox-container {
   position: relative;
   top: 70px;
   left: 400px;
-  width: 1170px;
+  width: 1300px;
   height: 752px;
   background-color: white;
 }
@@ -267,49 +249,6 @@ div.inbox-searchbar {
   border: solid 1px #f1f1f3;
 }
 
-ul.profile-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  border: solid 1px #f1f1f3;
-}
-
-div.profile {
-  position: relative;
-  width: 100%;
-  height: 80px;
-  border: solid 1px #f1f1f3;
-}
-
-div.avatar img {
-  margin: 18px 18px;
-}
-
-div.title-message {
-  margin-left: 40px;
-  margin-top: 15px;
-}
-
-div.title p {
-  font-family: Source Sans Pro;
-  font-size: 15px;
-  font-weight: bold;
-  font-stretch: normal;
-  line-height: 18px;
-  letter-spacing: 0px;
-  color: #4d4f5c;
-}
-
-div.message p {
-  font-size: 10px;
-}
-
-div.date {
-  position: absolute;
-  right: 15px;
-  top: 10px;
-}
-
 div.mail {
   border: solid 1px #f1f1f3;
   width: 100%;
@@ -382,9 +321,9 @@ p.content {
   letter-spacing: 0px;
 }
 
-textarea.el-textarea__inner{
-        margin: 20px;
-    width: 630px;
-    height: 150px;
+textarea.el-textarea__inner {
+  margin: 20px;
+  width: 630px;
+  height: 150px;
 }
 </style>

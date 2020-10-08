@@ -60,7 +60,6 @@ div.dashboard-side {
 div.dashboard-container {
   position: relative;
   top: 70px;
-  /* left: 325px; */
   left: 225px;
 }
 

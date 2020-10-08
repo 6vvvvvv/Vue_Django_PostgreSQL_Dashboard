@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <v-chart class="my-chart" :options="bar" />
+    <v-chart class="product-bar" :options="bar" />
   </div>
 </template>
 
@@ -15,19 +15,23 @@ export default {
   data: function() {
     return {
       bar: {
-        grid: { show: false },
-
+        color: "#A3A1FB",
         tooltip: {},
         xAxis: {
-          data: ["Jan", "Feb", "Mar", "Apr", "May"]
+          type: "category",
+          data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
         },
-        yAxis: {},
-
+        yAxis: {
+          type: "value"
+        },
         series: [
           {
-            name: "sale",
+            data: [120, 200, 150, 80, 70, 110, 130],
             type: "bar",
-            data: [10, 20, 36, 10, 10]
+            showBackground: true,
+            backgroundStyle: {
+              color: "rgba(161, 251, 167, 0.8)"
+            }
           }
         ]
       }
@@ -37,8 +41,5 @@ export default {
 </script>
 
 <style>
-.my-chart {
-  width: 100px;
-  height: 50px;
-}
+
 </style>

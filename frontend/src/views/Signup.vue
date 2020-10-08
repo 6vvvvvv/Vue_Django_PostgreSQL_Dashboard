@@ -50,7 +50,7 @@
 
       <div class="signup-form-redirect">
         <span class="redirect-link"
-          ><a href="#">Already have an account?Sign in.</a></span
+          ><a href=/login>Already have an account?Sign in.</a></span
         >
       </div>
 

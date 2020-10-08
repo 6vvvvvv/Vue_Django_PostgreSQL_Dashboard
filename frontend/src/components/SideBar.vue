@@ -26,31 +26,31 @@
         </a>
       </li>
       <li class="navibar-nav-item">
-        <a href="#" class="nav-link"
+        <a href="/product" class="nav-link"
           ><img :src="products" class="item" />
           <span class="link-text">Products</span>
         </a>
       </li>
       <li class="navibar-nav-item">
-        <a href="#" class="nav-link"
+        <a href="/invoice" class="nav-link"
           ><img :src="invoices" class="item" />
           <span class="link-text">Invoices</span>
         </a>
       </li>
       <li class="navibar-nav-item">
-        <a href="#" class="nav-link"
+        <a href="/customers" class="nav-link"
           ><img :src="customers" class="item" />
           <span class="link-text">Customers</span>
         </a>
       </li>
       <li class="navibar-nav-item">
-        <a href="#" class="nav-link"
+        <a href="/chat" class="nav-link"
           ><img :src="chatroom" class="item" />
           <span class="link-text">Chat Room</span>
         </a>
       </li>
       <li class="navibar-nav-item">
-        <a href="#" class="nav-link"
+        <a href="/calendar" class="nav-link"
           ><img :src="calendar" class="item" />
           <span class="link-text">Calendar</span>
         </a>

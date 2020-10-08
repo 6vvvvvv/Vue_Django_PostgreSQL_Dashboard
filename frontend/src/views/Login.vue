@@ -28,7 +28,7 @@
       </div>
       <div class="login-form-btn">
         <button type="submit">Login</button>
-        <button type="submit">Sign up</button>
+        <button type="submit" v-on:click="redirect">Sign up</button>
       </div>
 
       <div class="login-form-footer"><p>Term of use. Privacy policy</p></div>
@@ -48,6 +48,12 @@ export default {
   },
   components: {
     QInput
+  },
+  methods: {
+    redirect: function() {
+      window.location.href = "/signup";
+      // router.push({ path: "/signup" });
+    }
   }
 };
 </script>
