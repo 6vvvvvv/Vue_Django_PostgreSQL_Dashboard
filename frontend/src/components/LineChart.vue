@@ -3,13 +3,21 @@ import { Line } from "vue-chartjs";
 
 export default {
   extends: Line,
+  props: ["lablefromparent", "actualfromparent", "bodytempfromparent"],
+
   data() {
     return {
+      trend3h: null,
+      lablelist: this.lablefromparent,
+      actuallist: this.actualfromparent,
+      bodytemplist: this.bodytempfromparent,
       gradient: null,
       gradient2: null
     };
   },
+
   mounted() {
+    console.log("this.lable", this.lablelist);
     this.gradient = this.$refs.canvas
       .getContext("2d")
       .createLinearGradient(0, 0, 0, 450);
@@ -27,38 +35,43 @@ export default {
 
     this.renderChart(
       {
-        labels: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July"
-        ],
+        labels: this.lablelist,
         datasets: [
           {
-            label: "Data One",
+            label: "Actual Temp",
             borderColor: "#FC2525",
             pointBackgroundColor: "white",
             borderWidth: 1,
             pointBorderColor: "white",
             backgroundColor: this.gradient,
-            data: [40, 39, 10, 40, 39, 80, 40]
+            data: this.actuallist
           },
           {
-            label: "Data Two",
+            label: "Body Feelling",
             borderColor: "#05CBE1",
             pointBackgroundColor: "white",
             pointBorderColor: "white",
             borderWidth: 1,
             backgroundColor: this.gradient2,
-            data: [60, 55, 32, 10, 2, 12, 53]
+            data: this.bodytemplist
           }
         ]
       },
-      { responsive: true, maintainAspectRatio: false }
+      {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true
+              }
+            }
+          ]
+        }
+      }
     );
+
   }
 };
 </script>

@@ -1,5 +1,9 @@
 <template>
-  <el-input v-model="input" placeholder="Search"></el-input>
+  <el-input
+    v-model="input"
+    @change="inputhandler"
+    placeholder="Search"
+  ></el-input>
 </template>
 
 <script>
@@ -8,6 +12,12 @@ export default {
     return {
       input: ""
     };
+  },
+  methods: {
+    inputhandler() {
+      this.$store.commit("inputresulthandler", this.input);
+      console.log("storeafterinputhandler", this.$store.state.inputresult);
+    }
   }
 };
 </script>

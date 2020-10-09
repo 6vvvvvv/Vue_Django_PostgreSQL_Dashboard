@@ -7,22 +7,15 @@
 
         <div class="row barchart-container">
           <ul class="barchart-list">
-            <li><BarChart /></li>
+            <li><BarChart/></li>
             <li><BarChart /></li>
             <li><BarChart /></li>
           </ul>
         </div>
-        <div v-if="this.bodytemp.length" class="row linechart-container">
-          <div><p class="real-time">Real Time Temperature</p></div>
-          <LineChart
-            v-bind:lablefromparent="lable"
-            v-bind:actualfromparent="actual"
-            v-bind:bodytempfromparent="bodytemp"
-          />
-        </div>
+        <div class="row linechart-container"><LineChart /></div>
         <div class="row linechart-detail-map">
           <div class="linechart-detail">
-            <div  class="linechart-detail-title"></div> 
+            <div class="linechart-detail-title"></div>
             <div class="linechart-detail-table"><Table /></div>
           </div>
           <div class="linechart-map"><Map /></div>
@@ -39,18 +32,10 @@ import LineChart from "../components/LineChart";
 import Map from "../components/Map";
 import Table from "../components/Table";
 import SearchBar from "../components/SearchBar";
-import axios from "axios";
 
 export default {
   name: "Dashboard",
-  data: () => ({
-    didSearch: false,
-    location: "",
-    trend3h: [],
-    lable: [],
-    actual: [],
-    bodytemp: []
-  }),
+  data: () => ({}),
   components: {
     SideBar,
     BarChart,
@@ -58,45 +43,7 @@ export default {
     Map,
     Table,
     SearchBar
-  },
-
-  created() {
-    axios
-      .get("https://ipapi.co/json/")
-      .then(response => {
-        console.log("fromapi", response.data);
-        axios
-          .get(
-            `http://api.openweathermap.org/data/2.5/forecast?q=${response.data.city}&appid=34e35ced0edac102f995450c1b6d4bae`
-          )
-          .then(response1 => {
-            console.log("reponsedatacity", response1.data);
-
-            this.trend3h = response1.data.list.slice(1, 8);
-
-            this.lable = response1.data.list.slice(1, 8).map(item => {
-              return item.dt_txt;
-            });
-
-            this.actual = response1.data.list.slice(1, 8).map(item => {
-              return (item.main.temp - 273.15).toFixed(1);
-            });
-
-            this.bodytemp = response1.data.list.slice(1, 8).map(item => {
-              return (item.main.feels_like - 273.15).toFixed(1);
-            });
-
-            this.$store.commit("trend3hhandler", this.trend3h);
-            console.log("storetrend", this.$store.state.trend3h);
-          })
-          .catch(err => console.log(err));
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  },
-
-  methods: {}
+  }
 };
 </script>
 
@@ -139,10 +86,6 @@ div.linechart-container {
   margin-left: 80px;
   margin-top: 20px;
   padding: 97px 125px 57px;
-}
-
-p.real-time {
-  font-size: 20px;
 }
 
 span.bc2 span.bc3 {

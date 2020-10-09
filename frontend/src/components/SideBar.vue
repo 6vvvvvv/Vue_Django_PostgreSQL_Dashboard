@@ -2,13 +2,13 @@
   <nav class="navibar-container">
     <ul class="navibar-nav">
       <li class="navibar-nav-logo">
-        <a href="#" class="nav-link"
+        <a href="/" class="nav-link"
           ><span class="link-text logo-text">IMPEKABLE</span>
           <img :src="logo" class="logo"
         /></a>
       </li>
       <li class="navibar-nav-item">
-        <a href="/login" class="nav-link"
+        <a href="/home" class="nav-link"
           ><img :src="home" class="item" />
           <span class="link-text">Home</span>
         </a>
