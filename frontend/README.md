@@ -12,8 +12,8 @@
 
 5. This API is related to the weather forcast(I have no idea what should I make so I prefer a handy one in this place). Il will by default initialize and show the local datas depending on your actual location.But you can also search the place you want and have the datas showed accordingly in line chart in page Dashboard, which means that it is dynamic. You are feel free to test it by yourself.
 
- 
- 
+## Overview
+![image](https://github.com/6vvvvvv/Vue_Vuex_Dashboard/blob/main/frontend/img/display.gif)
  
 ## Firebase:https://vue-dashboard-e15a0.firebaseapp.com/
 
