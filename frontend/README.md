@@ -1,4 +1,4 @@
-# datagenius
+# Data Genius
 
 # Vue_Vuex_Dashboard
 
