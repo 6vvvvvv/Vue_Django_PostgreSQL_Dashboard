@@ -124,6 +124,4 @@ p.detail {
   letter-spacing: 0px;
   color: #43425d;
 }
-
-
 </style>

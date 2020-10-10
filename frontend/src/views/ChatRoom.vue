@@ -8,7 +8,7 @@
         <div class="chat-search col-2"><SearchBar /></div>
         <div class="chat-person col-10">
           <PersonPanel
-          v-for="item in items"
+            v-for="item in items"
             v-bind:key="item.key"
             v-bind:avatar="item.avatar"
             v-bind:name="item.name"
@@ -75,8 +75,7 @@ export default {
         id: 5,
         name: "Andrey Prokopenko",
         avatar: "avatar-4"
-      },
-
+      }
     ]
   }),
   components: {

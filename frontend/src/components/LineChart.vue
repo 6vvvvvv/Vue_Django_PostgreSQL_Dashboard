@@ -17,7 +17,6 @@ export default {
   },
 
   mounted() {
-    console.log("this.lable", this.lablelist);
     this.gradient = this.$refs.canvas
       .getContext("2d")
       .createLinearGradient(0, 0, 0, 450);
@@ -71,7 +70,6 @@ export default {
         }
       }
     );
-
   }
 };
 </script>

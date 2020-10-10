@@ -4,7 +4,7 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: { inputresult: null, trend3h: null },
+  state: { inputresult: null, trend3h: [] },
   mutations: {
     inputresulthandler(state, payload) {
       state.inputresult = payload;

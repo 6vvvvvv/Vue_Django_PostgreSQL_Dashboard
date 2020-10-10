@@ -13,9 +13,10 @@
         <p>Mobile : 871.567.4877</p>
       </div>
       <div class="edit-cancel">
-        <a href="#"><img :src="edit" alt="edit" /></a><a href="#"><span
-          ><img :src="cancel" alt="cancel"
-        /></span></a>
+        <a href="#"><img :src="edit" alt="edit"/></a
+        ><a href="#"
+          ><span><img :src="cancel" alt="cancel"/></span
+        ></a>
       </div>
     </div>
     <div class="social">

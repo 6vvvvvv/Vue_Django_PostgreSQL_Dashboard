@@ -52,7 +52,6 @@ export default {
   methods: {
     redirect: function() {
       window.location.href = "/signup";
-      // router.push({ path: "/signup" });
     }
   }
 };

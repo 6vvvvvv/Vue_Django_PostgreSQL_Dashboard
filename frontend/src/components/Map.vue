@@ -1,6 +1,6 @@
 <template>
   <GmapMap
-    :center="{ lat: 45.748, lng: 4.85}"
+    :center="{ lat: 45.748, lng: 4.85 }"
     :zoom="7"
     map-type-id="terrain"
     style="width: 490px; height: 479px"

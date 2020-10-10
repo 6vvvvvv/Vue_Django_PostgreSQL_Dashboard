@@ -18,11 +18,12 @@
             v-bind:lablefromparent="lable"
             v-bind:actualfromparent="actual"
             v-bind:bodytempfromparent="bodytemp"
+            v-bind:key="location"
           />
         </div>
         <div class="row linechart-detail-map">
           <div class="linechart-detail">
-            <div  class="linechart-detail-title"></div> 
+            <div class="linechart-detail-title"></div>
             <div class="linechart-detail-table"><Table /></div>
           </div>
           <div class="linechart-map"><Map /></div>
@@ -40,6 +41,7 @@ import Map from "../components/Map";
 import Table from "../components/Table";
 import SearchBar from "../components/SearchBar";
 import axios from "axios";
+import { mapState } from "vuex";
 
 export default {
   name: "Dashboard",
@@ -60,17 +62,44 @@ export default {
     SearchBar
   },
 
+  computed: mapState({
+    searchPlaceTrend3h: state => state.trend3h,
+    searchPlace: state => state.inputresult
+  }),
+
+  watch: {
+    searchPlaceTrend3h() {
+      const newTrend3hList = this.searchPlaceTrend3h;
+
+      this.location = this.searchPlace;
+
+      this.lable = newTrend3hList.map(item => {
+        return item.dt_txt;
+      });
+
+      this.actual = newTrend3hList.map(item => {
+        return (item.main.temp - 273.15).toFixed(1);
+      });
+
+      this.bodytemp = newTrend3hList.map(item => {
+        return (item.main.feels_like - 273.15).toFixed(1);
+      });
+    }
+  },
+
   created() {
     axios
       .get("https://ipapi.co/json/")
       .then(response => {
-        console.log("fromapi", response.data);
+        console.log("fromapi-----", response.data);
         axios
           .get(
             `http://api.openweathermap.org/data/2.5/forecast?q=${response.data.city}&appid=34e35ced0edac102f995450c1b6d4bae`
           )
           .then(response1 => {
-            console.log("reponsedatacity", response1.data);
+            console.log("fromapi******", response1.data);
+
+            this.location = response.data.city;
 
             this.trend3h = response1.data.list.slice(1, 8);
 
@@ -85,14 +114,12 @@ export default {
             this.bodytemp = response1.data.list.slice(1, 8).map(item => {
               return (item.main.feels_like - 273.15).toFixed(1);
             });
-
-            this.$store.commit("trend3hhandler", this.trend3h);
-            console.log("storetrend", this.$store.state.trend3h);
           })
           .catch(err => console.log(err));
       })
       .catch(error => {
         console.error(error);
+        alert("Error occurred");
       });
   },
 
@@ -156,6 +183,10 @@ div.linechart-detail {
   margin-top: 37px;
   background-color: #ffffff;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.04);
+}
+
+div.linechart-detail-table {
+  margin-top: 30px;
 }
 
 div.linechart-map {

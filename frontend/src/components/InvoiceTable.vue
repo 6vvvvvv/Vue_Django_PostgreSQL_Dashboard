@@ -1,8 +1,9 @@
 <template>
   <el-table :data="tableData" style="width: 100%">
-    <el-table-column prop="id" label="#" > </el-table-column>
-    <el-table-column prop="item" label="ITEM" > </el-table-column>
-    <el-table-column prop="description" label="DESCRIPTION" width="400"> </el-table-column>
+    <el-table-column prop="id" label="#"> </el-table-column>
+    <el-table-column prop="item" label="ITEM"> </el-table-column>
+    <el-table-column prop="description" label="DESCRIPTION" width="400">
+    </el-table-column>
     <el-table-column prop="quantity" label="QUANTITY"> </el-table-column>
     <el-table-column prop="price" label="PRICE"> </el-table-column>
   </el-table>
