@@ -39,7 +39,7 @@
         ><span style="font-weight:bold">Here</span>
       </a>
       and I have deployed it on google host,
-      <a href="#"><span style="font-weight:bold">Please check here</span></a>
+      <a href="https://vue-dashboard-e15a0.firebaseapp.com/"><span style="font-weight:bold">Please check here</span></a>
     </div>
   </div>
 </template>
