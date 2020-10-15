@@ -1,0 +1,121 @@
+nav.navibar-container {
+  position: fixed;
+  width: 66px;
+  height: 100%;
+  background-color: #43425d;
+  transition: width 0.3s ease;
+}
+
+nav.navibar-container:hover {
+  position: fixed;
+  width: 260px;
+  height: 100%;
+  background-color: #43425d;
+}
+
+/* logo  animation*/
+ul.navibar-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li.navibar-nav-logo {
+  position: relative;
+  width: 100%;
+  height: 70px;
+}
+
+li.navibar-nav-logo > a.nav-link > span.logo-text {
+  display: none;
+}
+
+nav.navibar-container:hover li.navibar-nav-logo > a.nav-link > span.logo-text {
+  position: relative;
+  display: block;
+  opacity: 1;
+  width: 100px;
+  height: 21px;
+  margin: 26px 0 23px 25px;
+  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.05);
+  font-family: Source Sans Pro;
+  font-size: 15px;
+  font-weight: bold;
+  font-stretch: normal;
+  line-height: 21px;
+  letter-spacing: 3px;
+  color: #ffffff;
+}
+
+li.navibar-nav-logo > a.nav-link > img.logo {
+  width: 30px;
+  height: 30px;
+  color: white;
+  margin: 26px 0 23px 20px;
+}
+
+nav.navibar-container:hover li.navibar-nav-logo > a.nav-link > img.logo {
+  display: none;
+}
+
+/* list item animation */
+li.navibar-nav-item :hover {
+  opacity: 0.7;
+  transition: 400ms;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #a3a0fb;
+}
+
+li.navibar-nav-item {
+  display: block;
+  padding: auto;
+  width: 100%;
+  height: 53px;
+}
+
+a.nav-link {
+  display: flex;
+  align-items: center;
+}
+
+a.nav-link img.item {
+  display: flex;
+  width: 15px;
+  height: 15px;
+  margin: 19px 11px 20px 25px;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+a.nav-link > span.link-text {
+  visibility: hidden;
+  opacity: 0;
+}
+
+nav.navibar-container:hover a.nav-link span.link-text {
+  transition: visibility 0.7s linear, opacity 0.7s linear;
+  visibility: visible;
+  opacity: 1;
+  font-family: Source Sans Pro;
+  font-size: 15px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 21px;
+  letter-spacing: 0px;
+  color: white;
+}
+
+/* ajustment */
+a.nav-link img.item:hover {
+  border: none;
+}
+
+a.nav-link span.link-text:hover {
+  border: none;
+}

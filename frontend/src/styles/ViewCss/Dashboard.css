@@ -1,0 +1,79 @@
+div#dashboard {
+  position: relative;
+}
+
+div.dashboard-side {
+  position: relative;
+}
+
+div.dashboard-container {
+  position: relative;
+  width: 1170px;
+
+  top: 70px;
+  left: 400px;
+}
+
+div.searchbar {
+  width: 100%;
+}
+
+div.barchart-container {
+  position: relative;
+  width: 100%;
+  margin-top: 15px;
+}
+
+div.barchart-1 {
+  display: inline-block;
+  position: relative;
+  width: 30%;
+}
+div.barchart-2 {
+  display: inline-block;
+  position: relative;
+  width: 30%;
+  left: 85px;
+}
+div.barchart-3 {
+  display: inline-block;
+  position: relative;
+  width: 30%;
+  left: 165px;
+}
+
+div.linechart-container {
+  position: relative;
+  width: 1170px;
+  left: 400px;
+  margin-top: 110px;
+  padding: 40px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.04);
+}
+
+p.real-time {
+  font-size: 20px;
+}
+
+div.linechart-detail-map {
+  position: relative;
+  width: 1170px;
+  left: 400px;
+  margin-top: 40px;
+}
+
+div.linechart-detail {
+  position: relative;
+  display: inline-block;
+  width: 620px;
+  height: 475px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.04);
+}
+
+div.linechart-map {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}

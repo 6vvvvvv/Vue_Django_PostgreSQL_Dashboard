@@ -57,10 +57,4 @@ export default {
 };
 </script>
 
-<style>
-td.el-table_1_column_1 div.cell span {
-  position: absolute;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-</style>
+<style src="@/styles/ComponentCss/ProductTable.css"></style>

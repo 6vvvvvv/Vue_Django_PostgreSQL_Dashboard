@@ -74,9 +74,4 @@ export default {
 };
 </script>
 
-<style>
-canvas#line-chart {
-  width: 1170px;
-  height: 439px;
-}
-</style>
+<style src="@/styles/ComponentCss/LineChart.css"></style>

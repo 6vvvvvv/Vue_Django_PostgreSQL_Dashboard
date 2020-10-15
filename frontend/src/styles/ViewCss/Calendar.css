@@ -1,0 +1,22 @@
+div#calendar {
+  position: relative;
+  display: flex;
+}
+
+div.calendar-side {
+  width: 100px;
+}
+
+div.calendar-side:hover div.calendar-container {
+  position: relative;
+}
+
+div.calendar-container {
+  position: relative;
+  top: 70px;
+  left: 400px;
+  width: 1170px;
+  height: 752px;
+  background-color: white;
+  padding: 40px 20px;
+}

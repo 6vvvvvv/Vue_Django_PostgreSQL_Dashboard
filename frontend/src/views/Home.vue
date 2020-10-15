@@ -39,7 +39,9 @@
         ><span style="font-weight:bold">Here</span>
       </a>
       and I have deployed it on google host,
-      <a href="https://vue-dashboard-e15a0.firebaseapp.com/"><span style="font-weight:bold">Please check here</span></a>
+      <a href="https://vue-dashboard-e15a0.firebaseapp.com/"
+        ><span style="font-weight:bold">Please check here</span></a
+      >
     </div>
   </div>
 </template>
@@ -49,26 +51,13 @@ import SideBar from "../components/SideBar";
 
 export default {
   name: "Home",
-  data: () => ({}),
+  data() {
+    return {};
+  },
   components: {
     SideBar
   }
 };
 </script>
 
-<style>
-div#home {
-  position: relative;
-  width: calc(100% - 325px);
-}
-
-div.home-container {
-  position: relative;
-  top: 70px;
-  left: 400px;
-  width: 1170px;
-  height: 752px;
-  background-color: white;
-  padding: 40px 20px;
-}
-</style>
+<style src="@/styles/ViewCss/Home.css"></style>

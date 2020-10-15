@@ -41,8 +41,4 @@ export default {
 };
 </script>
 
-<style>
-table.el-table__header th {
-  background-color: #f5f6fa;
-}
-</style>
+<style src="@/styles/ComponentCss/InvoiceTable.css"></style>

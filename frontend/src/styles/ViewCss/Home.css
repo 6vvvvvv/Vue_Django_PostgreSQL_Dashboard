@@ -1,0 +1,19 @@
+div#home {
+  position: relative;
+}
+
+div.home-side {
+  position: fixed;
+  width: 66px;
+}
+
+div.home-container {
+  position: relative;
+  top: 70px;
+  left: 400px;
+  width: 1170px;
+  height: 752px;
+  background-color: white;
+  padding: 40px 20px;
+  transition: width 0.3s ease;
+}

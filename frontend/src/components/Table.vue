@@ -108,8 +108,4 @@ export default {
 };
 </script>
 
-<style>
-table.q-table > thead {
-  background-color: #f5f6fa;
-}
-</style>
+<style src="@/styles/ComponentCss/Table.css"></style>

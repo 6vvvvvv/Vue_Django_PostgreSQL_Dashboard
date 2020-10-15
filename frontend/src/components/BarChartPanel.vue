@@ -36,9 +36,4 @@ export default {
 };
 </script>
 
-<style>
-.my-chart {
-  width: 100px;
-  height: 50px;
-}
-</style>
+<style src="@/styles/ComponentCss/BarChartPanel.css"></style>
